@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'qaninja/rubywd'
+            image 'ruby'
         }
     }
     
@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building or Resolve Dependencies'
-                sh 'rm -f Gemfile.lock'
+                
                 sh 'bundle install'
             }
         }
